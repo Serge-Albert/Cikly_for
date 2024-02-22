@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <button id="but">Погода</button>
+    <div id="Weather"></div>
+
+
+    <script>
+
+        document.getElementById("but").onclick = () => {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=13b97dbfcc43ac6c9c1032d6bef595bb"}`)
+                .then(response => response.json())
+                .then(json => console.log(json))
+        }
+
+        for (let i = 1; i < 11; i++) {
+            document.getElementById('container').innerHTML += i + ' * 7 = ' + (7 * i) + "<br>"
+
+        }
+
+        let menu = {
+            Antipasti: 450,
+            Salat: 400,
+            Soup: 350,
+            Pasta_from_Chief: 650,
+        }
+        for (const key in menu) {
+            console.log(menu[key]);
+            document.getElementById("container").innerHTML += key + " - " + menu[key] + "<br>"
+        }
+
+        console.log(menu["Salat"]);
+
+        console.log(menu.Salat);
+
+
+    </script>
+
+</body>
+
+
+
+</html>
